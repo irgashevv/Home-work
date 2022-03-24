@@ -1,0 +1,12 @@
+{
+    "name": "vendor/home-work",
+    "description": "This is Academy Students 33rd Home Work",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ibrohim",
+            "email": "irgashev1261@gmail.com"
+        }
+    ],
+    "require": {}
+}
