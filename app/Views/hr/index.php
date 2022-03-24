@@ -1,33 +1,31 @@
 <?php require_once __DIR__ . '/../templates/header.php'; ?>
-
+<div class="">
+    <h1 class="display-1">Сотрудники</h1>
+</div>
 <table class="table">
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Отчество</th>
+        <th scope="col">Год рождения</th>
+        <th scope="col">Позиция</th>
+        <th scope="col">Любимая книга</th>
     </tr>
     </thead>
     <tbody>
+    <?php foreach ($employees as $employee) : ?>
     <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th><?= $employee['id'] ?></th>
+        <th><?= $employee['name'] ?></th>
+        <th><?= $employee['surname'] ?></th>
+        <th><?= $employee['patronymic'] ?></th>
+        <th><?= $employee['date_of_birth'] ?></th>
+        <th><?= $employee['position'] ?></th>
+        <th><?= $employee['fovarite_book'] ?></th>
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-    </tr>
+    <?php endforeach; ?>
     </tbody>
 </table>
 
