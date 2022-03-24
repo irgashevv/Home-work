@@ -47,4 +47,21 @@ class QueryBuilder
             die($exception->getMessage());
         }
     }
+
+    /**
+     * This method delete a row from table
+     */
+    public function delete($table, $id)
+    {
+        $sql = sprintf('DELETE FROM %s WHERE id = %s',
+            $table,
+            $id,
+        );
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute();
+        } catch (PDOException $exception) {
+            die($exception->getMessage());
+        }
+    }
 }
