@@ -12,7 +12,7 @@ class Router
      *
      * @var array|array[]
      */
-    protected array $routes = [
+    public array $routes = [
         'GET'  => [],
         'POST' => []
     ];
@@ -23,9 +23,9 @@ class Router
      * and returns its instance
      *
      * @param $file
-     * @return static
+     * @return Router
      */
-    public static function load($file): static
+    public static function load($file): Router
     {
         $router = new static();
 
@@ -63,12 +63,8 @@ class Router
     /**
      * This method check, if url exists on our array
      * and if it exists, this method will return its value(controller)
-     *
-     * @param $url
-     * @param $requestType
-     * @return mixed
      */
-    public function direct($url, $requestType): mixed
+    public function direct($url, $requestType)
     {
         if (array_key_exists($url, $this->routes[$requestType])) {
             return $this->routes[$requestType][$url];

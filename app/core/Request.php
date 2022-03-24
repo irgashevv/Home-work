@@ -18,10 +18,8 @@ class Request
 
     /**
      * This method return only method of request (POST or GET etc.)
-     *
-     * @return mixed
      */
-    public static function method(): mixed
+    public static function method()
     {
         return $_SERVER['REQUEST_METHOD'];
     }
