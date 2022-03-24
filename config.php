@@ -3,7 +3,8 @@
 return [
     'database' => [
         'connection' => 'mysql:host=localhost',
-        'name'       => 'ibra',
+        'name'       => 'academy',
+        'username'   => 'ibra',
         'password'   => 'Password123$',
         'options'    => [
         ]
