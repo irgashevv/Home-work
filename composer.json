@@ -1,12 +1,17 @@
 {
-    "name": "vendor/home-work",
-    "description": "This is Academy Students 33rd Home Work",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Ibrohim",
-            "email": "irgashev1261@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "vendor/home-work",
+  "description": "This is Academy Students 33rd Home Work",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Ibrohim",
+      "email": "irgashev1261@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {}
 }
