@@ -1,6 +1,7 @@
 <?php require_once __DIR__ . '/../templates/header.php'; ?>
 <div class="">
     <h1 class="display-1">Сотрудники</h1>
+    <a href="hr/create" class="btn btn-info">Добавить сотрудника</a>
 </div>
 <table class="table">
     <thead>
@@ -12,6 +13,7 @@
         <th scope="col">Год рождения</th>
         <th scope="col">Позиция</th>
         <th scope="col">Любимая книга</th>
+        <th scope="col">Действие</th>
     </tr>
     </thead>
     <tbody>
@@ -23,7 +25,11 @@
         <th><?= $employee['patronymic'] ?></th>
         <th><?= $employee['date_of_birth'] ?></th>
         <th><?= $employee['position'] ?></th>
-        <th><?= $employee['fovarite_book'] ?></th>
+        <th><?= $employee['favorite_book'] ?></th>
+        <th>
+            <a href="hr/delete">Удалить</a>
+            <a href="">Редактировать</a>
+        </th>
     </tr>
     <?php endforeach; ?>
     </tbody>

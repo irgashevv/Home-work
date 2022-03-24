@@ -11,3 +11,14 @@
 </head>
 <body>
 <div class="container">
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Сотрудники</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/weather-forecasts">Прогноз погоды</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/products">Склад продуктов</a>
+        </li>
+    </ul>
