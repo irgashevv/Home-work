@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../Views/hr/create.php';
+require_once __DIR__ . '/../../views/hr/create.php';
 
 if (isset($_POST['submitted'])) {
     $queryBuilder->insert('employees', [

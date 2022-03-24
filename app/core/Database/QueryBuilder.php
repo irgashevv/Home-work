@@ -48,6 +48,37 @@ class QueryBuilder
         }
     }
 
+    public function getById($table, $id)
+    {
+        $sql = "SELECT * FROM {$table} WHERE id = {$id}";
+
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function update($table, $id, $parameters)
+    {
+        $keyValues = implode(', ', array_map(function ($key, $value) {
+                return "{$value}='{$key}'";
+            },
+                $parameters,
+                array_keys($parameters))
+        );
+
+        $sql = sprintf('UPDATE %s SET %s WHERE id = %s',
+            $table,
+            $keyValues,
+            $id);
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute($parameters);
+        } catch (PDOException $exception) {
+            die($exception->getMessage());
+        }
+    }
+
     /**
      * This method delete a row from table
      */

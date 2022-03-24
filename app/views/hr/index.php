@@ -27,7 +27,7 @@
             <th><?= $employee['position'] ?></th>
             <th><?= $employee['favorite_book'] ?></th>
             <th>
-                <a href="" class="btn btn-info">Редактировать</a>
+                <a href="hr/edit?id=<?= $employee['id'] ?>" class="btn btn-info">Редактировать</a>
                 <a href="hr/delete?id=<?= $employee['id'] ?>" class="btn btn-danger">Удалить</a>
             </th>
         </tr>
