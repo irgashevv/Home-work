@@ -18,7 +18,7 @@ class HrController
     {
         $employees = App::get('database')->getAll('employees');
 
-        require_once __DIR__ . '/../views/hr/index.view.php';
+        return view('hr/index', ['employees' => $employees]);
     }
 
     /**
@@ -28,7 +28,7 @@ class HrController
      */
     public function create()
     {
-        require_once __DIR__ . '/../views/hr/create.view.php';
+        return view('hr/create');
     }
 
     /**
@@ -49,7 +49,7 @@ class HrController
                 'favorite_book' => $_POST['favorite_book'],
             ]);
 
-            header('Location: /');
+            redirect('');
         }
     }
 
@@ -63,7 +63,7 @@ class HrController
     {
         $employee = App::get('database')->getById('employees', $_GET['id']);
 
-        require_once __DIR__ . '/../views/hr/edit.view.php';
+        return view('hr/edit', compact('employee'));
     }
 
     /**
@@ -74,7 +74,6 @@ class HrController
      */
     public function update()
     {
-
         if (isset($_POST['submitted'])) {
             App::get('database')->update('employees', $_POST['id'], [
                 'name'          => $_POST['name'],
@@ -85,7 +84,7 @@ class HrController
                 'favorite_book' => $_POST['favorite_book'],
             ]);
 
-            header('Location: /');
+            redirect('');
         }
     }
 
@@ -99,7 +98,6 @@ class HrController
     {
         App::get('database')->delete('employees', $_GET['id']);
 
-        header('Location: /');
-
+        redirect('');
     }
 }
