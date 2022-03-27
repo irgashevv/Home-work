@@ -9,5 +9,5 @@ require_once '../vendor/autoload.php';
 
 require_once '../app/core/bootstrap.php';
 
-require_once Router::load('../routes.php')
+Router::load('../routes.php')
     ->direct(Request::url(), Request::method());

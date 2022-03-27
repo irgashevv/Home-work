@@ -2,6 +2,7 @@
 
 namespace App\core;
 
+use Exception;
 use PDOException;
 
 class Router
@@ -67,9 +68,27 @@ class Router
     public function direct($url, $requestType)
     {
         if (array_key_exists($url, $this->routes[$requestType])) {
-            return $this->routes[$requestType][$url];
+            return $this->callAction(
+                ...explode('@', $this->routes[$requestType][$url])
+            );
         }
-
         throw new PDOException('Route not defined');
+    }
+
+    /**
+     * @param $controller
+     * @param $action
+     * @return void
+     * @throws Exception
+     */
+    protected function callAction($controller, $action)
+    {
+        $controller = "App\\Controllers\\{$controller}";
+        $controller = new $controller;
+
+        if (!method_exists($controller, $action)) {
+            throw new Exception("Whoops, sorry! We don't have such $action action, in $controller controller");
+        }
+        $controller->$action();
     }
 }
