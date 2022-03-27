@@ -1,5 +1,7 @@
 <?php
 
-$employee = $queryBuilder->getById('employees', $_GET['id']);
+use App\core\App;
 
-require_once __DIR__ . '/../../views/hr/edit.php';
+$employee = App::get('database')->getById('employees', $_GET['id']);
+
+require_once __DIR__ . '/../../views/hr/edit.view.php';

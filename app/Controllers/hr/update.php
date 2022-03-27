@@ -1,6 +1,9 @@
 <?php
+
+use App\core\App;
+
 if (isset($_POST['submitted'])) {
-    $queryBuilder->update('employees', $_POST['id'], [
+    App::get('database')->update('employees', $_POST['id'], [
         'name'          => $_POST['name'],
         'surname'       => $_POST['surname'],
         'patronymic'    => $_POST['patronymic'],

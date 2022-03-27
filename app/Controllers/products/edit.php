@@ -1,5 +1,7 @@
 <?php
 
-$product = $queryBuilder->getById('products', $_GET['id']);
+use App\core\App;
 
-require_once __DIR__ . '/../../views/products/edit.php';
+$product = App::get('database')->getById('products', $_GET['id']);
+
+require_once __DIR__ . '/../../views/products/edit.view.php';

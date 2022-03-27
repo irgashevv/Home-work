@@ -1,9 +1,11 @@
 <?php
 
-require_once __DIR__ . '/../../views/hr/create.php';
+use App\core\App;
+
+require_once __DIR__ . '/../../views/hr/create.view.php';
 
 if (isset($_POST['submitted'])) {
-    $queryBuilder->insert('employees', [
+    App::get('database')->insert('employees', [
         'name'          => $_POST['name'],
         'surname'       => $_POST['surname'],
         'patronymic'    => $_POST['patronymic'],

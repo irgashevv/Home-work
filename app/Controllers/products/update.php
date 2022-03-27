@@ -1,6 +1,9 @@
 <?php
+
+use App\core\App;
+
 if (isset($_POST['submitted'])) {
-    $queryBuilder->update('products', $_POST['id'], [
+    App::get('database')->update('products', $_POST['id'], [
         'title'        => $_POST['title'],
         'quantity'     => $_POST['quantity'],
         'arrival_date' => $_POST['arrival_date'],

@@ -1,5 +1,7 @@
 <?php
 
-$employees = $queryBuilder->getAll('employees');
+use App\core\App;
 
-require_once __DIR__ . '/../../views/hr/index.php';
+$employees = App::get('database')->getAll('employees');
+
+require_once __DIR__ . '/../../views/hr/index.view.php';

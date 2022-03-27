@@ -1,9 +1,11 @@
 <?php
 
-require_once __DIR__ . '/../../views/products/create.php';
+use App\core\App;
+
+require_once __DIR__ . '/../../views/products/create.view.php';
 
 if (isset($_POST['submitted'])) {
-    $queryBuilder->insert('products', [
+    App::get('database')->insert('products', [
         'title'        => $_POST['title'],
         'quantity'     => $_POST['quantity'],
         'arrival_date' => $_POST['arrival_date'],
